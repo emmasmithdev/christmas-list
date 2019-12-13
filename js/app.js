@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const deleteItem = document.querySelector("#present-list");
   deleteItem.addEventListener("click", handleDeleteItem);
 
+  const filter = document.querySelector("#filter");
+  filter.addEventListener("change", handleFilter);
+
   const deleteAllButton = document.querySelector("#delete-all");
   deleteAllButton.addEventListener("click", handleDeleteAllClick);
 });
@@ -43,8 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const buyStatus = document.createElement("p");
       if (form.buyStatus.value === "purchased"){
         buyStatus.textContent = "Purchased: \u2714";
+        buyStatus.classList.add("purchased");
       } else {
         buyStatus.textContent = "Purchased: \u274C";
+        buyStatus.classList.add("not-purchased");
       }
       presentListItem.appendChild(buyStatus);
 
@@ -54,6 +59,32 @@ document.addEventListener("DOMContentLoaded", () => {
     presentListItem.appendChild(deleteButton);
 
     return presentListItem;
+  }
+
+  const handleFilter = function(event){
+    const presentList = document.querySelector("#present-list");
+    let listItems = presentList.getElementsByTagName("li");
+    if (event.target.value === "purchased"){
+      for (let item of listItems){
+        if (item.lastChild.previousElementSibling.className === "not-purchased"){
+          item.classList.add("hide");
+        } else if (item.lastChild.previousElementSibling.className === "purchased"){
+          item.classList.remove("hide");
+        }
+      }
+    } else if (event.target.value === "notYetPurchased"){
+      for (let item of listItems){
+        if (item.lastChild.previousElementSibling.className === "purchased"){
+          item.classList.add("hide");
+        } else if (item.lastChild.previousElementSibling.className === "not-purchased"){
+          item.classList.remove("hide");
+        }
+      }
+    } else if (event.target.value === "All"){
+      for (let item of listItems){
+        item.classList.remove("hide");
+      }
+    }
   }
 
   const handleDeleteItem = function(event){

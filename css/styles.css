@@ -38,3 +38,10 @@ button {
   background-color: #f98eeb;
   margin-left: 50px;
 }
+.filter {
+  float: right;
+  margin-right: 30px;
+}
+.hide {
+  display: none;
+}
