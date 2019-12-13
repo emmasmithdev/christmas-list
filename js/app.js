@@ -25,20 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
     presentListItem.appendChild(familyMember);
 
     const present = document.createElement("p");
-    present.textContent = form.present.value;
+    present.textContent = `Present: ${form.present.value}`;
     presentListItem.appendChild(present);
 
     const shop = document.createElement("p");
-    shop.textContent = form.shop.value;
+    shop.textContent = `Shop: ${form.shop.value}`;
     presentListItem.appendChild(shop);
 
     const cost = document.createElement("p");
-    cost.textContent = form.cost.value;
+    cost.textContent = `Cost: ${form.cost.value}`;
     presentListItem.appendChild(cost);
 
     const buyStatus = document.createElement("p");
-    buyStatus.textContent = form.buyStatus.value;
-    presentListItem.appendChild(buyStatus);
+      if (form.buyStatus.value === "purchased"){
+        buyStatus.textContent = "Purchased: \u2714";
+      } else {
+        buyStatus.textContent = "Purchased: \u274C";
+      }
+      presentListItem.appendChild(buyStatus);
 
     return presentListItem;
   }
