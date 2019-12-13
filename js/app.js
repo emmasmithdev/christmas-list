@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const newItemForm = document.querySelector("#new-item-form");
   newItemForm.addEventListener("submit", handleNewItemFormSubmit);
 
+  const deleteItem = document.querySelector("#present-list");
+  deleteItem.addEventListener("click", handleDeleteItem);
+
   const deleteAllButton = document.querySelector("#delete-all");
   deleteAllButton.addEventListener("click", handleDeleteAllClick);
 });
@@ -19,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const createPresentListItem = function(form){
     const presentListItem = document.createElement("li");
     presentListItem.classList.add("present-list-item");
+    presentListItem.id = form.familyMember.value;
 
     const familyMember = document.createElement('h3');
     familyMember.textContent = form.familyMember.value;
@@ -44,7 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       presentListItem.appendChild(buyStatus);
 
+    const deleteButton = document.createElement("button");
+    deleteButton.innerHTML = "Delete";
+    deleteButton.id = "delete-button";
+    presentListItem.appendChild(deleteButton);
+
     return presentListItem;
+  }
+
+  const handleDeleteItem = function(event){
+    listItem = event.target.parentNode
+      listItem.remove();
   }
 
   const handleDeleteAllClick = function(event){

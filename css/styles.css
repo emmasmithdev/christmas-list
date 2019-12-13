@@ -2,6 +2,7 @@ body {
   background-image: url("https://images.fineartamerica.com/images-medium-large-5/christmas-background-christmas-frame-made-of-fir-branches-new-years-toys-christmas-wallpapers-flat-top-view-merry-christmas-card-winter-holiday-theme-happy-new-year-space-for-text-svetlana-belozerova.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: 'Questrial', sans-serif;
 }
 
 h1 {
@@ -22,10 +23,18 @@ ul {
 .present-list-item {
   margin: 0.5rem 0.5rem;
   padding: 0.5rem 0.8rem;
-  border: 1px solid #e01fc9;
+  border: 3px solid #e01fc9;
   border-radius: 5%;
 }
 
 button {
+  background-color: #f2d2ee;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#delete-all {
   background-color: #f98eeb;
+  margin-left: 50px;
 }
