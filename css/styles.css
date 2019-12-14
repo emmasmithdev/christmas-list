@@ -3,15 +3,22 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   font-family: 'Questrial', sans-serif;
+  font-size: 75%;
 }
 
 h1 {
   margin-top: 350px;
   margin-left: 30px;
+  font-size: 50px;
+}
+h2 {
+  font-size: 30px;
+  margin-left: 30px;
 }
 
 .intro {
   margin-left: 30px;
+  font-size: 20px;
 }
 
 ul {
@@ -35,13 +42,44 @@ button {
 }
 
 #delete-all {
-  background-color: #f98eeb;
+  background-color: white;
   margin-left: 50px;
+  border-radius: 5%;
+  font-size: 15px;
+  padding: 5px;
+  border: 3px solid #e01fc9;
 }
 .filter {
   float: right;
   margin-right: 30px;
+  font-size: 15px;
+  border: 3px solid #e01fc9;
 }
 .hide {
   display: none;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+.form-inline select {
+  margin: 5px 10px 5px 0;
+  font-size: 15px;
+  border: 3px solid #e01fc9;
+}
+input.box {
+  padding: 5px;
+  background-color: #fff;
+  border: 3px solid #e01fc9;
+  border-radius: 5%;
+}
+input.save {
+  font-size: 20px;
+  border-radius: 5%;
+  padding: 5px;
+  border: 3px solid #e01fc9;
+}
+input[type="radio"]{
+  transform: scale(1.5);
+  margin-left: 20px;
 }
